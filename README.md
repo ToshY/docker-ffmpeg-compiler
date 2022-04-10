@@ -26,7 +26,7 @@ make build version="snapshot"
 * This will build an image from the latest `ffmpeg-snapshot` release and copy the `ffmpeg`, `ffprobe` and `ffplay`
   binaries to `$HOME/bin`.
 * Substitute `snapshot` with the desired version, e.g. `5.0.1`, to build an image for
-  a [specific release](http://ffmpeg.org/releases).
+  a [specific release](http://ffmpeg.org/releases/?C=M;O=D).
 
 <sub>Note: building the image with the current dependencies may take a while ... 💤</sub>
 </details>
