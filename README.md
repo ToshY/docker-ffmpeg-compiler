@@ -4,8 +4,6 @@ Docker FFmpeg Compiler is a simple way to compile the [FFmpeg](https://ffmpeg.or
 
 ## 📝 Getting Started
 
-### ‼️ Prerequisites
-
 This project uses [Docker](https://docs.docker.com/get-docker/), therefore it's highly recommended installing it before
 continuing. 😉
 
