@@ -46,8 +46,3 @@ You can tinker the Dockerfile to your needs by disabling, enabling or adding mor
 ## ⚠️ License
 
 Distributed under the MIT license. See [LICENSE](./LICENSE) for more information.
-
-<sub>Note: To be honest, I have no idea what license this should be, so I gave it a MIT license. As I'm not distributing
-the actual binaries but just showing on how to compile it using Docker I think it should be fine. If the license ends up
-being incorrect, let me know by creating an issue, and I will update it.
-</sub>
