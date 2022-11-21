@@ -2,47 +2,89 @@
 
 Docker FFmpeg Compiler is a simple way to compile the [FFmpeg](https://ffmpeg.org/) binary for your linux system.
 
-## 📝 Getting Started
+## 📝 Quickstart
 
-This project uses [Docker](https://docs.docker.com/get-docker/), therefore it's highly recommended installing it before
-continuing. 😉
+### 🐋 Prerequisites
 
-## 🐋 Usage
+This project requires Docker. See the [Docker installation guide](https://docs.docker.com/get-docker/) to get started.
 
-The easiest way to get started is by using the available `make` commands , or derive the docker commands directly from
-the [Makefile](./Makefile).
+### 🚀 Setup
+
+The easiest way to get started is by using the [`Makefile`](./Makefile)). Run `make` to see the help.
 
 <details>
-  <summary>🚀 Build</summary>
+  <summary>📦 Container</summary>
 
-Build docker image for specified version.
+### Compile
+
+Build container to compile ffmpeg for version `snapshot`.
 
 ```shell
-make build version="snapshot"
+make compile VERSION="snapshot"
 ```
 
-* This will build an image from the latest `ffmpeg-snapshot` release and copy the `ffmpeg`, `ffprobe` and `ffplay`
-  binaries to `$HOME/bin`.
-* Substitute `snapshot` with the desired version, e.g. `5.0.1`, to build an image for
-  a [specific release](http://ffmpeg.org/releases/?C=M;O=D).
+> Note: You can substitute `snapshot` with the desired version, e.g. `5.1.2`, to build an image for
+> a [specific release](http://ffmpeg.org/releases/?C=M;O=D).
 
-<sub>Note: building the image with the current dependencies may take a while ... 💤</sub>
+### Start
+
+Start container (in detached mode).
+
+```shell
+make start VERSION="snapshot"
+```
+
+### Stop
+
+Stop container.
+
+```shell
+make stop VERSION="snapshot"
+```
+
+### Remove
+
+Remove container.
+
+```shell
+make remove VERSION="snapshot"
+```
+
 </details>
 <details>
-  <summary>🗑️ Remove</summary>
+  <summary>💻️ Host machine</summary>
 
-Remove docker image for specified version.
+### Copy
+
+Copy the FFmpeg, FFprobe and FFplay binaries from container to host machine.
 
 ```shell
-make remove version="snapshot"
+make copy VERSION="snapshot"
+```
+
+> Note: This will copy the binaries to the `$HOME/bin` directory on the host machine.
+
+### Install
+
+Install the [`package.list`](./package.list) on host machine.
+
+```shell
+make install
 ```
 
 </details>
 
-### 🧰 Customise
+### 🧰 Tinker
 
-You can tinker the Dockerfile to your needs by disabling, enabling or adding more features before building the image.
+If you need either more or less libraries for your compiled binaries, you can edit the [`package.list`](./package.list)
+and [`Dockerfile`](./Dockerfile) to your
+needs before building the image.
 
-## ⚠️ License
+## ❕ License
 
 Distributed under the MIT license. See [LICENSE](./LICENSE) for more information.
+
+> Note: The purpose of this repository is purely to show on how to compile FFmpeg with several libraries, disregarding
+> library
+> specific licenses. Please check the [FFmpeg License and Legal Considerations](https://www.ffmpeg.org/legal.html)
+> before compiling and/or using the compiled binary in production.
